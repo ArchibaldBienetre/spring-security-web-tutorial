@@ -1,5 +1,6 @@
 package com.example.securingweb;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -28,6 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout().permitAll();
     }
 
+    @Bean
     @Override
     protected UserDetailsService userDetailsService() {
         UserDetails user = User.withDefaultPasswordEncoder()
